@@ -1,38 +1,15 @@
-class student {
- int rollnum;
- String name;
- int Java_marks; 
- int SE_marks;
- int DevOps_marks;
-    public student(int rollnum, String name, int Java_marks,int SE_marks,int DevOps_marks){
-        this.rollnum = rollnum;
-        this.name = name;
-        this.Java_marks = Java_marks;
-        this.SE_marks = SE_marks;
-        this.DevOps_marks = DevOps_marks;
-    }
-    float totalMarks(){
-        return Java_marks+SE_marks+DevOps_marks;
-    }
-    void percentage(){
-        float total = totalMarks();
-        float per = total/300;
-        per = per*100;
-        System.out.println("Percentage is: "+per);
-        if(per>=90)
-            System.out.println("Grade A");
-        else if(per>=75)
-            System.out.println("Grade B");
-        else if(per>=60)
-            System.out.println("Grade C");
-        else
-            System.out.println("Fail");
-    }
-}
-public class Main{
-public static void main(String args[]){
-student s1 = new student(1,"ivy",80,95,90);
-s1.percentage();
-}
-}
+import myMath.Arithmetic;
+import myMath.Geometry;
+public class Main {
+    public static void main(String[] args) {
+        Arithmetic a = new Arithmetic();
+        Geometry g = new Geometry();
 
+        System.out.println("Add 4 & 5 " +a.add(4, 5));
+        System.out.println("Subtract 10 from 12 " +a.subtract(12, 10));
+        System.out.println("Divide 10 by 2 "+a.divide(10,2));
+        System.out.println("Multiply 150 with 41 "+a.multiply(150,41));
+        System.out.println("Area of circle with radii 4.5: "+g.circleArea(4.5));
+        System.out.println("Area of rectangle l=4 b=6: "+g.rectangle(4, 6));
+    }
+}
